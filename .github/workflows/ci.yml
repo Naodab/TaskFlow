@@ -89,7 +89,7 @@ jobs:
         env:
           RAILS_ENV: test
           MYSQL_USERNAME: root
-          MYSQL_PASSWORD: password
+          MYSQL_PASSWORD:
           # REDIS_URL: redis://localhost:6379/0
         run: bin/rails db:migrate && bin/rails db:test:prepare test test:system
 

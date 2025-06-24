@@ -88,7 +88,6 @@ jobs:
       - name: Run tests
         env:
           RAILS_ENV: test
-          DATABASE_URL: mysql2://root:password@127.0.0.1:3306/sample_app_test
           MYSQL_USERNAME: root
           MYSQL_PASSWORD: password
           # REDIS_URL: redis://localhost:6379/0

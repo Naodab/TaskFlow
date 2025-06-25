@@ -1,0 +1,35 @@
+<div class="center-container">
+    <div class="container form-container container--shadow">
+        <h1 class="form-title">Create Account</h1>
+        <p class="form-description">Join thousands of users managing tasks beautifully</p>
+
+        <%= form_with model: @user do |f| %>
+            <div class="form-control">
+                <%= f.label :name %>
+                <%= f.text_field :name, placeholder: "Example User" %>
+            </div>
+
+            <div class="form-control">
+                <%= f.label :email %>
+                <%= f.email_field :email, placeholder: "user@example.com" %>
+            </div>
+
+            <div class="form-control">
+                <%= f.label :password %>
+                <%= f.password_field :password, placeholder: "Minimum 6 characters" %>
+            </div>
+
+            <div class="form-control">
+                <%= f.label :password_confirmation, "Confirmation" %>
+                <%= f.password_field :password_confirmation, placeholder: "Re-enter your password" %>
+            </div>
+
+            <%= f.submit "Create your account", class: "btn btn--gradient form-submit" %>
+        <% end %>
+
+        <div class="form-extra">
+            Already have an account?
+            <%= link_to "Sign in here", '#' %>
+        </div>
+    </div>
+</div>

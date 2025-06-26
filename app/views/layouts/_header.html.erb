@@ -1,0 +1,21 @@
+<header data-adjust-navbar-padding-target="navbar">
+    <div class="header__center">
+        <ul class="ul--row">
+            <li><%= nav_link_to "Home", root_url %></li>
+            <li><%= nav_link_to "About", about_static_pages_url %></li>
+        </ul>
+    </div>
+    <div class="header__left">
+        <%= render "layouts/logo", large: true %>
+    </div>
+    <div class="header__right">
+        <ul class="ul--row">
+            <li>
+                <%= link_to "Sign in", '#', class: "btn btn--border btn--hover--default" %>
+            </li>
+            <li>
+                <%= link_to "Get started", '#', class: "btn btn--gradient btn--hover--default" %>
+            </li>
+        </ul>
+    </div>
+</header>

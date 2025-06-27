@@ -2,25 +2,24 @@
     <div class="container form-container container--shadow">
         <h1 class="form-title">Create Account</h1>
         <p class="form-description">Join thousands of users managing tasks beautifully</p>
-
-        <%= form_with model: @user do |f| %>
+        <%= form_with model: @user, data: { turbo: false } do |f| %>
             <div class="form-control">
-                <%= f.label :name %>
+                <%= form_label_with_error f, :name %>
                 <%= f.text_field :name, placeholder: "Example User" %>
             </div>
 
             <div class="form-control">
-                <%= f.label :email %>
+                <%= form_label_with_error f, :email %>
                 <%= f.email_field :email, placeholder: "user@example.com" %>
             </div>
 
             <div class="form-control">
-                <%= f.label :password %>
+                <%= form_label_with_error f, :password %>
                 <%= f.password_field :password, placeholder: "Minimum 6 characters" %>
             </div>
 
             <div class="form-control">
-                <%= f.label :password_confirmation, "Confirmation" %>
+                <%= form_label_with_error f, :password_confirmation, "Confirmation" %>
                 <%= f.password_field :password_confirmation, placeholder: "Re-enter your password" %>
             </div>
 
@@ -29,7 +28,7 @@
 
         <div class="form-extra">
             Already have an account?
-            <%= link_to "Sign in here", '#' %>
+            <%= link_to "Sign in here", login_path %>
         </div>
     </div>
 </div>

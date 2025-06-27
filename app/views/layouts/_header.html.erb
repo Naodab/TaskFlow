@@ -10,12 +10,18 @@
     </div>
     <div class="header__right">
         <ul class="ul--row">
-            <li>
-                <%= link_to "Sign in", '#', class: "btn btn--border btn--hover--default" %>
-            </li>
-            <li>
-                <%= link_to "Get started", signup_url, class: "btn btn--gradient btn--hover--default" %>
-            </li>
+            <% if logged_in? %>
+                <li>
+                    <%= link_to "Log out", logout_path, method: :delete, class: "btn btn--border btn--hover--default" %>
+                </li>
+            <% else %>
+                <li>
+                    <%= link_to "Sign in", login_path, class: "btn btn--border btn--hover--default" %>
+                </li>
+                <li>
+                    <%= link_to "Get started", signup_path, class: "btn btn--gradient btn--hover--default" %>
+                </li>
+            <% end %>
         </ul>
     </div>
 </header>

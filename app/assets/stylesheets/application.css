@@ -172,6 +172,24 @@ ul.ul--row {
     margin-top: 12px;
 }
 
+.form-error-msg {
+    color: red;
+}
+
+.form-error {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-check-box {
+    display: flex;
+}
+
+.form-check-box input {
+    width: unset;
+    margin: 0 24px;
+}
+
 label {
     margin: 24px 0 8px;
     color: var(--text-color-primary);
@@ -179,6 +197,7 @@ label {
 
 input {
     padding: 12px;
+    width: 100%;
     border: 1px solid #666;
     outline: none;
     color: var(--text-color-primary);
@@ -217,6 +236,22 @@ input {
 .alert.alert--info {
     border-color: rgb(57, 31, 173);
     background-color: rgb(155, 161, 243);
+}
+
+#errors-explanation {
+    width: 100%;
+    margin: 24px 0;
+}
+
+#errors-explanation p {
+    background-color: #f13d3d8f;
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+
+#errors-explanation ul {
+    list-style: circle;
+    padding-left: 32px;
 }
 
 header {

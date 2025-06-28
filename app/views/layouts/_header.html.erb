@@ -11,8 +11,20 @@
     <div class="header__right">
         <ul class="ul--row">
             <% if logged_in? %>
-                <li>
-                    <%= link_to "Log out", logout_path, method: :delete, class: "btn btn--border btn--hover--default" %>
+                <li data-controller="dropdown-menu">
+                    <div class="btn btn--border btn--hover--default has-dropdown" data-dropdown-menu-target="menu">
+                        Account
+                        <i class="fa-solid fa-angle-down expand" data-dropdown-menu-target="expand"></i>
+                        <i class="fa-solid fa-angle-up shrink hidden" data-dropdown-menu-target="shrink"></i>
+
+                        <ul class="dropdown container hidden" data-dropdown-menu-target="dropdown">
+                            <li class="dropdown-item"><%= link_to "Profile", '#' %></li>
+                            <li class="dropdown-item"><%= link_to "Settings", '#' %></li>
+                            <li class="dropdown-item">
+                                <%= link_to "Log out", logout_path, method: :delete %>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
             <% else %>
                 <li>

@@ -1,0 +1,7 @@
+<h1><%= @user.name %></h1>
+<h3><%= @user.email %></h3>
+<% if @user.activated? %>
+  <p>Your account is activated.</p>
+<% else %>
+  <p>Your account is not activated. Please check your email for the activation link.</p>
+<% end %>

@@ -5,9 +5,10 @@ class User < ApplicationRecord
   VALID_PASSWORD_REGEX = /\A(?=.*[A-Z])(?=.*[a-z])(?=.*\d).+\z/
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@([a-z\d]+(-[a-z\d]+)*\.)+[a-z]+\z/i
 
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :activation_token
 
   before_save :downcase_email
+  before_create :create_activation_token
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :email,
@@ -47,9 +48,22 @@ class User < ApplicationRecord
     digest.nil? ? false : BCrypt::Password.new(digest).is_password?(token)
   end
 
+  def activate_account
+    update_columns(activated: true, activation_digest: nil)
+  end
+
+  def send_activation_email
+    UserMailer.activate_account(self).deliver_now
+  end
+
   private
 
   def downcase_email
     self.email = email.downcase
+  end
+
+  def create_activation_token
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest(activation_token)
   end
 end

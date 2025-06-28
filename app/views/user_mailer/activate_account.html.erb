@@ -1,0 +1,21 @@
+<div style="width: 100%; display: flex; justify-content: center">
+  <div style="
+    padding: 20px 64px;
+    border: 10px solid black;
+    border-radius: 16px;
+  ">
+    <h1 style="
+      width: 100%;
+      text-align: center;
+      background: linear-gradient(to left,rgb(116, 150, 231),rgb(233, 54, 84));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    ">Activate Account</h1>
+
+    <p style="font-size: 20px">
+      Hi <%= @user.name %>, click this link below to activate your account and continue using TaskFlow to manage you tasks.
+    </p>
+    <%= link_to "Activate account", edit_account_activation_url(@user.activation_token, email: @user.email)%>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="center-container">
+    <div class="container form-container container--shadow">
+        <h1 class="form-title">Reset Password</h1>
+        <p class="form-description">Reset your password</p>
+        <%= form_with model: @user, data: { turbo: false } do |f| %>
+            <%= hidden_field_tag :email, @user.email %>
+
+            <div class="form-control">
+                <%= form_label_with_error f, :password %>
+                <%= f.password_field :password, placeholder: "Minimum 6 characters" %>
+            </div>
+
+            <div class="form-control">
+                <%= form_label_with_error f, :password_confirmation, "Confirmation" %>
+                <%= f.password_field :password_confirmation, placeholder: "Re-enter your password" %>
+            </div>
+
+            <%= f.submit "Create your account", class: "btn btn--gradient form-submit" %>
+        <% end %>
+    </div>
+</div>

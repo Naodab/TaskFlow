@@ -25,7 +25,7 @@
     <%= render "layouts/header" %>
     <div data-adjust-navbar-padding-target="content" class="main-content">
       <% flash.each do |message_type, message|%>
-        <%= render 'shared/toast', message: message, type: message_type%>
+        <%= render 'shared/toast', message: message, type: message_type %>
       <% end %>
       <%= yield %>
     </div>

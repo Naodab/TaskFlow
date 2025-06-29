@@ -10,7 +10,10 @@
             </div>
 
             <div class="form-control">
-                <%= f.label :password %>
+                <%= f.label :email, class: "form-flex" do %>
+                    Password
+                    <%= link_to "forgot password?", new_password_reset_path %>
+                <% end %>
                 <%= f.password_field :password, placeholder: "Enter your password" %>
             </div>
 

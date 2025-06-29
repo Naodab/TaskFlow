@@ -2,8 +2,10 @@ one:
   name: 'One User'
   email: 'one@taskflow.com'
   password_digest: <%= User.digest('zzZ111') %>
+  activated: true
 
 two:
   name: 'Two User'
   email: 'two@taskflow.com'
   password_digest: <%= User.digest('zzZ111') %>
+  activated: true

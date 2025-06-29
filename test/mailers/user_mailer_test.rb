@@ -26,4 +26,9 @@ class UserMailerTest < ActionMailer::TestCase
     mail = assert_user_mail(:activation, :activate_account, 'Activate account')
     assert_match @user.name, mail.body.encoded
   end
+
+  test 'reset_password' do
+    mail = assert_user_mail(:reset, :reset_password, 'Password reset')
+    assert_match @user.name, mail.body.encoded
+  end
 end

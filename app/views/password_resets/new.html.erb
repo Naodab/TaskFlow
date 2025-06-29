@@ -1,0 +1,18 @@
+<div class="center-container">
+    <div class="container form-container container--shadow">
+        <h1 class="form-title">Forgot Password</h1>
+        <p class="form-description">Provide us your email</p>
+        <%= form_with url: password_resets_path, scope: :password_reset, data: { turbo: false } do |f| %>
+            <div class="form-control">
+                <%= f.label :email %>
+                <%= f.email_field :email, placeholder: "Enter your email" %>
+            </div>
+
+            <%= f.submit "Receive mail", class: "btn btn--gradient form-submit" %>
+        <% end %>
+
+        <div class="form-extra">
+            <%= link_to "Back to login here", login_path %>
+        </div>
+    </div>
+</div>

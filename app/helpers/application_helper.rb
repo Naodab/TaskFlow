@@ -16,7 +16,7 @@ module ApplicationHelper
     base_label = label_text || field.to_s.humanize
 
     default_class = 'form-label'
-    error_class = error.present? ? 'form-error' : ''
+    error_class = error.present? ? 'form-flex' : ''
     label_class = [default_class, options[:class], error_class].compact.join(' ')
 
     if error

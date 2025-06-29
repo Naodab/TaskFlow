@@ -196,7 +196,7 @@ ul.ul--row {
     color: red;
 }
 
-.form-error {
+.form-flex {
     display: flex;
     justify-content: space-between;
 }
